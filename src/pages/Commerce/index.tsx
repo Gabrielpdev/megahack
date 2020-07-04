@@ -1,3 +1,7 @@
+/* eslint-disable react/jsx-closing-bracket-location */
+/* eslint-disable react/jsx-closing-tag-location */
+/* eslint-disable react/jsx-indent-props */
+/* eslint-disable react/jsx-indent */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { useEffect, useState } from 'react';
@@ -183,29 +187,25 @@ const Commerce: React.FC = () => {
                   {tableSelected === undefined
                     ? commerce.tables.map(item => (
                         <button
-                        key={item.id}
-                        type="button"
-                        disabled={!item.avalible}
-                        className={item.avalible ? 'disponivel' : 'ocupado'}
-                        onClick={() => handleTableSelected(item.id)}
-                      >
-                        {item.avalible ? item.id : 'Mesa Indisponível'}
-                      </button>
+                          key={item.id}
+                          type="button"
+                          disabled={!item.avalible}
+                          className={item.avalible ? 'disponivel' : 'ocupado'}
+                          onClick={() => handleTableSelected(item.id)}
+                        >
+                          {item.avalible ? item.id : 'Mesa Indisponível'}
+                        </button>
                       ))
-                    : {tableHours.hours.map(hour => (
+                    : tableHours?.hours.map(hour => (
                         <button
-                            key={hour.hour}
-                            disabled={!hour.avalible}
-                            type="button"
-                            className={hour.avalible ? 'disponivel' : 'ocupado'}
-                          >
-                            {hour.avalible ? hour.hour : 'Horário Indisponível'}
+                          key={hour.hour}
+                          disabled={!hour.avalible}
+                          type="button"
+                          className={hour.avalible ? 'disponivel' : 'ocupado'}
+                        >
+                          {hour.avalible ? hour.hour : 'Horário Indisponível'}
                         </button>
                       ))}
-                    <div className="footer">
-                      <button>VOLTAR</button>
-                      <button>SALVAR</button>
-                  </div>}
                 </div>
               ) : (
                 <> </>
