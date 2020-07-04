@@ -50,6 +50,17 @@ export const Map = styled(Mapa)`
 export const Popup = styled(texto)`
   display: flex;
   flex-direction: column;
+  max-width: 220px;
+
+  span {
+    display: block;
+    max-width: 200px;
+
+    margin-top: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
   div.header {
     display: flex;

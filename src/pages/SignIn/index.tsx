@@ -15,7 +15,7 @@ import Button from '../../components/Button';
 
 import { Container, Content, AnimationContainer, Background } from './styles';
 
-interface SignInFormData {
+interface ISignInFormData {
   email: string;
   password: string;
 }
@@ -28,7 +28,7 @@ const SignIn: React.FC = () => {
   const { addToast } = useToast();
 
   const hendleSubmit = useCallback(
-    async (data: SignInFormData) => {
+    async (data: ISignInFormData) => {
       try {
         formRef.current?.setErrors({});
 
