@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { useState, useEffect } from 'react';
 import { TileLayer, Marker } from 'react-leaflet';
 import { useHistory } from 'react-router-dom';
@@ -65,12 +67,16 @@ const Dashboard: React.FC = () => {
     loadPositions();
   }, []);
 
+  function handleNavigateToUser(): void {
+    history.push('profile');
+  }
+
   return (
     <Container>
       <Header>
         <h1>Consum Beer</h1>
         <div className="profile">
-          <span>{user.name}</span>
+          <h3 onClick={handleNavigateToUser}>{user.name}</h3>
           <button type="button" onClick={() => signOut()}>
             Sair
           </button>

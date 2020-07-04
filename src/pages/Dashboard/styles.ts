@@ -33,6 +33,14 @@ export const Header = styled.div`
     flex-direction: column;
     text-align: right;
   }
+
+  h3 {
+    cursor: pointer;
+
+    &:hover {
+      color: #ff9900;
+    }
+  }
 `;
 
 export const Map = styled(Mapa)`

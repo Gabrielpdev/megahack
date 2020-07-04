@@ -78,11 +78,16 @@ export const ProductList = styled.table`
         }
 
         img {
-          width: 36px;
-          height: 36px;
+          width: 40px;
+          height: 40px;
           border-radius: 50%;
           margin-right: 5px;
-          object-fit: cover;
+        }
+
+        div.produto {
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
       }
     }
