@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom';
 import api from '../../services/api';
 import { useAuth } from '../../hooks/auth';
 
+import getDistance from '../../utils/getDistance';
+
 import { Container, Header, Map, Popup } from './styles';
 
 interface IUser {
@@ -75,30 +77,39 @@ const Dashboard: React.FC = () => {
         </div>
       </Header>
 
-      <Map center={position} zoom={4}>
+      <Map center={position} zoom={0}>
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.osm.org/{z}/{x}/{y}.png"
         />
-        {commerces.map(commerce => (
-          <Marker
-            key={commerce.id}
-            position={[Number(commerce.latitude), Number(commerce.longitude)]}
-          >
-            <Popup>
-              <div className="header">
-                <button
-                  type="button"
-                  onClick={() => history.push(`/commerce/${commerce.id}`)}
-                >
-                  {commerce.name}
-                </button>
-                <img src={commerce.image} alt={commerce.name} />
-              </div>
-              <span>{commerce.bio}</span>
-            </Popup>
-          </Marker>
-        ))}
+        {commerces.map(commerce =>
+          getDistance(
+            position[0],
+            position[1],
+            commerce.latitude,
+            commerce.longitude,
+          ) > 10 ? (
+            <Marker
+              key={commerce.id}
+              position={[Number(commerce.latitude), Number(commerce.longitude)]}
+            >
+              <Popup>
+                <div className="header">
+                  <button
+                    type="button"
+                    onClick={() => history.push(`/commerce/${commerce.id}`)}
+                  >
+                    {commerce.name}
+                  </button>
+                  <img src={commerce.image} alt={commerce.name} />
+                </div>
+                <span>{commerce.bio}</span>
+              </Popup>
+            </Marker>
+          ) : (
+            <> </>
+          ),
+        )}
       </Map>
     </Container>
   );

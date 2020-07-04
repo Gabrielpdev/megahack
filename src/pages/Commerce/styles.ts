@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { lighten } from 'polished';
 
 import signInBackgroundImg from '../../assets/commerce.jpg';
 
@@ -47,10 +48,12 @@ export const ProductList = styled.table`
   border-spacing: 0;
   border-collapse: separate;
   border-spacing: 0px 10px;
-
+  animation: ${appearFromLeft} 1s;
   > thead th {
-    color: #fff;
+    color: #ff9900;
+
     font-size: 18px;
+    font-weight: 500;
     text-align: center;
     padding: 25px 0 0 0;
   }
@@ -88,18 +91,87 @@ export const ProductList = styled.table`
 
 export const AnimationContainer = styled.div`
   width: 90%;
+  height: 100%;
+  max-height: 820px;
+
   padding-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 
   animation: ${appearFromLeft} 1s;
 
-  h1 {
-    display: block;
-    font-size: 30px;
-    margin-top: 35px;
+  img {
+    width: 160px;
+    height: 160px;
+    border: 1px solid #ff9900;
+    border-radius: 50%;
+  }
+
+  div.header {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    animation: ${appearFromLeft} 1s;
+    h1 {
+      color: #f4ede8;
+
+      margin: 0 auto;
+      margin-top: 25px;
+
+      font-size: 15px;
+      font-weight: 600;
+      display: block;
+
+      cursor: pointer;
+
+      &:hover {
+        color: #ff9900;
+      }
+    }
+  }
+
+  div.bio {
+    width: 80%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    animation: ${appearFromLeft} 1s;
+    h2 {
+      color: #ff9900;
+    }
+
+    span {
+      margin-top: 10px;
+    }
+  }
+
+  div.drivethru {
+    width: 80%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    animation: ${appearFromLeft} 1s;
+    h2 {
+      color: #ff9900;
+    }
+
+    button {
+      margin-top: 10px;
+      border: 1px solid #312e38;
+      padding: 5px;
+      border-radius: 5px;
+      background: ${lighten(0.39, '#ff9900')};
+
+      &:hover {
+        border: 1px solid #ff9900;
+      }
+    }
+
+    div.teste {
+      width: 1000px;
+      background: #000;
+    }
   }
 `;
 

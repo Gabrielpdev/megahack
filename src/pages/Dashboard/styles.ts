@@ -18,7 +18,7 @@ export const Header = styled.div`
   justify-content: space-between;
 
   width: 80%;
-  margin: 0 auto;
+  margin: 30px auto;
 
   button {
     margin-top: 5px;
@@ -36,11 +36,11 @@ export const Header = styled.div`
 `;
 
 export const Map = styled(Mapa)`
-  margin: 80px auto;
+  margin: 40px auto;
   border-radius: 10px;
   height: 500px;
   width: 80%;
-  border: 2px solid #000;
+  border: 2px solid #312e38;
 
   &:hover {
     border: 2px solid #ff9000;
