@@ -77,7 +77,7 @@ const Dashboard: React.FC = () => {
         </div>
       </Header>
 
-      <Map center={position} zoom={0}>
+      <Map center={position} zoom={7}>
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.osm.org/{z}/{x}/{y}.png"

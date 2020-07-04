@@ -21,6 +21,8 @@ import {
   Background,
 } from './styles';
 
+const QRCode = require('qrcode.react');
+
 interface IProduct {
   id: string;
   name: string;
@@ -40,6 +42,12 @@ interface ITable {
   hours: IHours[];
 }
 
+interface ICupom {
+  nome: string;
+  codigo: string;
+  description: string;
+}
+
 interface ICommerce {
   name: string;
   image: string;
@@ -48,6 +56,7 @@ interface ICommerce {
   finish: string;
   cardapio: IProduct[];
   tables: ITable[];
+  cupom: ICupom[];
 }
 
 const Commerce: React.FC = () => {
@@ -62,11 +71,15 @@ const Commerce: React.FC = () => {
   const [tableHours, setTableHours] = useState<ITable>();
   const [hourSelected, setHourSelected] = useState<string>();
 
+  const [cupons, setCupons] = useState<ICupom>();
+  const [cupomSelected, setCupomSelected] = useState<ICupom>();
+
   useEffect(() => {
     async function loadProducts(): Promise<void> {
       const response = await api.get(`/commerce/${id}`);
 
       setCommerce(response.data);
+      setCupons(response.data.cupom);
     }
     loadProducts();
   }, [id]);
@@ -84,6 +97,10 @@ const Commerce: React.FC = () => {
 
   function handleTableSelected(table: string): void {
     setTableSelected(table);
+  }
+
+  function handleCupomSelected(cupom: ICupom): void {
+    setCupomSelected(cupom);
   }
 
   function handleConfirmHour(): void {
@@ -139,6 +156,14 @@ const Commerce: React.FC = () => {
                   }}
                 >
                   Reserva
+                </h1>
+                <h1
+                  onClick={() => {
+                    setSelected(5);
+                    setTableSelected(undefined);
+                  }}
+                >
+                  Cupons
                 </h1>
               </div>
               {selected === 1 ? (
@@ -246,6 +271,45 @@ const Commerce: React.FC = () => {
                         {hour.avalible ? hour.hour : 'Horário Indisponível'}
                       </button>
                     ))
+                  )}
+                </div>
+              ) : (
+                <> </>
+              )}
+
+              {selected === 5 ? (
+                <div className="drivethru">
+                  {cupomSelected !== undefined ? (
+                    <> </>
+                  ) : (
+                    <h2>Cupouns de hoje !</h2>
+                  )}
+                  {cupomSelected === undefined ? (
+                    commerce.cupom.map(item => (
+                      <button
+                        key={item.codigo}
+                        type="button"
+                        onClick={() => handleCupomSelected(item)}
+                      >
+                        {item.nome}
+                      </button>
+                    ))
+                  ) : (
+                    <>
+                      <div className="cupomheader">
+                        <FiArrowLeftCircle
+                          size={30}
+                          onClick={() => setCupomSelected(undefined)}
+                        />
+                        <h2>{cupomSelected.nome}</h2>
+                      </div>
+
+                      <div className="cupom">
+                        <span>{cupomSelected.description}</span>
+                        <h3>{cupomSelected.codigo}</h3>
+                        <QRCode value="hey" />
+                      </div>
+                    </>
                   )}
                 </div>
               ) : (

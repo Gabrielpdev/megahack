@@ -19,7 +19,7 @@ export const Content = styled.div`
   width: 100%;
   max-width: 900px;
 
-  svg {
+  > svg {
     position: relative;
     right: 40%;
     top: 20px;
@@ -206,6 +206,43 @@ export const AnimationContainer = styled.div`
         background: ${lighten(0.4, '#ff9900')};
         border: 1px solid #ff9900;
       }
+    }
+  }
+
+  button {
+    border: 1px solid #312e38;
+
+    border-radius: 5px;
+
+    background: #f4ede8;
+    padding: 0 5px;
+
+    &:hover {
+      background: ${lighten(0.4, '#ff9900')};
+      border: 1px solid #ff9900;
+    }
+  }
+
+  svg {
+    cursor: pointer;
+
+    &:hover {
+      color: #ff9900;
+    }
+  }
+  div.cupom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      margin: 20px 0;
+    }
+
+    h3 {
+      font-size: 20px;
+      margin-bottom: 5px;
     }
   }
 `;
