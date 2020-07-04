@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { lighten } from 'polished';
+import { lighten, darken } from 'polished';
 
 import signInBackgroundImg from '../../assets/commerce.jpg';
 
@@ -156,7 +156,16 @@ export const AnimationContainer = styled.div`
       color: #ff9900;
     }
 
-    button {
+    button.ocupado {
+      margin-top: 10px;
+      border: 1px solid #312e38;
+      padding: 5px;
+      border-radius: 5px;
+
+      cursor: no-drop;
+    }
+
+    button.disponivel {
       margin-top: 10px;
       border: 1px solid #312e38;
       padding: 5px;

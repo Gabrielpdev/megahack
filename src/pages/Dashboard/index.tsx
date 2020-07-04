@@ -68,7 +68,7 @@ const Dashboard: React.FC = () => {
   return (
     <Container>
       <Header>
-        <h1>Mega Hack</h1>
+        <h1>Consum Beer</h1>
         <div className="profile">
           <span>{user.name}</span>
           <button type="button" onClick={() => signOut()}>

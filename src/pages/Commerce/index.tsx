@@ -184,14 +184,21 @@ const Commerce: React.FC = () => {
                         <button
                         key={item.id}
                         type="button"
+                        disabled={!item.avalible}
+                        className={item.avalible ? 'disponivel' : 'ocupado'}
                         onClick={() => handleTableSelected(item.id)}
                       >
                         {item.avalible ? item.id : 'Mesa Indisponível'}
                       </button>
                       ))
                     : tableHours?.hours.map(hour => (
-                        <button key={hour.hour} type="button">
-                        {hour.hour}
+                        <button
+                        key={hour.hour}
+                        disabled={!hour.avalible}
+                        type="button"
+                        className={hour.avalible ? 'disponivel' : 'ocupado'}
+                      >
+                        {hour.avalible ? hour.hour : 'Horário Indisponível'}
                       </button>
                       ))}
                 </div>
