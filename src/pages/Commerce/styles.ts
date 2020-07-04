@@ -102,14 +102,14 @@ export const AnimationContainer = styled.div`
   animation: ${appearFromLeft} 1s;
 
   img {
-    width: 160px;
-    height: 160px;
+    width: 100px;
+    height: 100px;
     border: 1px solid #ff9900;
     border-radius: 50%;
   }
 
   div.header {
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     animation: ${appearFromLeft} 1s;
@@ -119,7 +119,7 @@ export const AnimationContainer = styled.div`
       margin: 0 auto;
       margin-top: 25px;
 
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 600;
       display: block;
 
@@ -209,13 +209,28 @@ export const AnimationContainer = styled.div`
     }
   }
 
-  button {
+  button.cupomButton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 5px 0;
+
     border: 1px solid #312e38;
 
     border-radius: 5px;
 
     background: #f4ede8;
-    padding: 0 5px;
+    padding: 5px;
+
+    > img {
+      margin-left: 10px;
+      width: 50px;
+      height: 50px;
+    }
+    span {
+      margin: auto;
+    }
 
     &:hover {
       background: ${lighten(0.4, '#ff9900')};

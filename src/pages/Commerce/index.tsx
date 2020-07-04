@@ -45,6 +45,7 @@ interface ITable {
 interface ICupom {
   nome: string;
   codigo: string;
+  image: string;
   description: string;
 }
 
@@ -71,7 +72,6 @@ const Commerce: React.FC = () => {
   const [tableHours, setTableHours] = useState<ITable>();
   const [hourSelected, setHourSelected] = useState<string>();
 
-  const [cupons, setCupons] = useState<ICupom>();
   const [cupomSelected, setCupomSelected] = useState<ICupom>();
 
   useEffect(() => {
@@ -79,7 +79,6 @@ const Commerce: React.FC = () => {
       const response = await api.get(`/commerce/${id}`);
 
       setCommerce(response.data);
-      setCupons(response.data.cupom);
     }
     loadProducts();
   }, [id]);
@@ -290,8 +289,10 @@ const Commerce: React.FC = () => {
                         key={item.codigo}
                         type="button"
                         onClick={() => handleCupomSelected(item)}
+                        className="cupomButton"
                       >
-                        {item.nome}
+                        <img src={item.image} alt={item.description} />
+                        <span>{item.nome}</span>
                       </button>
                     ))
                   ) : (
