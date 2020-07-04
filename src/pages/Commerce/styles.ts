@@ -182,6 +182,32 @@ export const AnimationContainer = styled.div`
       background: #000;
     }
   }
+
+  div.confirmar {
+    margin-top: 10px;
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    span {
+      font-size: 25px;
+    }
+
+    button {
+      border: 1px solid #312e38;
+
+      border-radius: 5px;
+
+      background: #f4ede8;
+      padding: 0 5px;
+
+      &:hover {
+        background: ${lighten(0.4, '#ff9900')};
+        border: 1px solid #ff9900;
+      }
+    }
+  }
 `;
 
 export const Background = styled.div`
