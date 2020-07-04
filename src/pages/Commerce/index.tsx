@@ -66,9 +66,11 @@ const Commerce: React.FC = () => {
 
   useEffect(() => {
     async function loadHours(): Promise<void> {
-      const response = await api.get(`commerce/${id}/table/${tableSelected}`);
+      if (tableSelected) {
+        const response = await api.get(`commerce/${id}/table/${tableSelected}`);
 
-      setTableHours(response.data);
+        setTableHours(response.data);
+      }
     }
     loadHours();
   }, [id, tableSelected]);
@@ -76,7 +78,6 @@ const Commerce: React.FC = () => {
   function handleTableSelected(table: string): void {
     setTableSelected(table);
   }
-  console.log(tableSelected);
   return (
     <Container>
       <Background />
@@ -181,25 +182,25 @@ const Commerce: React.FC = () => {
                   <h2>Mesas</h2>
                   {tableSelected === undefined
                     ? commerce.tables.map(item => (
-                        <button
-                        key={item.id}
-                        type="button"
-                        disabled={!item.avalible}
-                        className={item.avalible ? 'disponivel' : 'ocupado'}
-                        onClick={() => handleTableSelected(item.id)}
-                      >
-                        {item.avalible ? item.id : 'Mesa Indisponível'}
-                      </button>
+                      <button
+                          key={item.id}
+                          type="button"
+                          disabled={!item.avalible}
+                          className={item.avalible ? 'disponivel' : 'ocupado'}
+                          onClick={() => handleTableSelected(item.id)}
+                        >
+                          {item.avalible ? item.id : 'Mesa Indisponível'}
+                        </button>
                       ))
                     : tableHours?.hours.map(hour => (
-                        <button
-                        key={hour.hour}
-                        disabled={!hour.avalible}
-                        type="button"
-                        className={hour.avalible ? 'disponivel' : 'ocupado'}
-                      >
-                        {hour.avalible ? hour.hour : 'Horário Indisponível'}
-                      </button>
+                      <button
+                          key={hour.hour}
+                          disabled={!hour.avalible}
+                          type="button"
+                          className={hour.avalible ? 'disponivel' : 'ocupado'}
+                        >
+                          {hour.avalible ? hour.hour : 'Horário Indisponível'}
+                        </button>
                       ))}
                 </div>
               ) : (

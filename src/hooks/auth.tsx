@@ -1,31 +1,31 @@
 import React, { createContext, useCallback, useState, useContext } from 'react';
 import api from '../services/api';
 
-interface AuthState {
+interface IAuthState {
   user: object;
 }
 
-interface SingInCredentials {
+interface ISingInCredentials {
   email: string;
   password: string;
 }
 
-interface AuthContextData {
+interface IAuthContextData {
   user: object;
-  signIn(credentials: SingInCredentials): Promise<void>;
+  signIn(credentials: ISingInCredentials): Promise<void>;
   signOut(): void;
 }
 
-const AuthContext = createContext<AuthContextData>({} as AuthContextData);
+const AuthContext = createContext<IAuthContextData>({} as IAuthContextData);
 
 const AuthProvider: React.FC = ({ children }) => {
-  const [data, setData] = useState<AuthState>(() => {
+  const [data, setData] = useState<IAuthState>(() => {
     const user = localStorage.getItem('@GoBarber:user');
 
     if (user) {
       return { user: JSON.parse(user) };
     }
-    return {} as AuthState;
+    return {} as IAuthState;
   });
 
   const signIn = useCallback(async () => {
@@ -33,16 +33,17 @@ const AuthProvider: React.FC = ({ children }) => {
 
     const user = response.data;
 
+    console.log(response.data);
+
     localStorage.setItem('@GoBarber:user', JSON.stringify(user));
 
     setData({ user });
   }, []);
 
   const signOut = useCallback(() => {
-    localStorage.removeItem('@GoBarber:token');
     localStorage.removeItem('@GoBarber:user');
 
-    setData({} as AuthState);
+    setData({} as IAuthState);
   }, []);
 
   return (
@@ -52,7 +53,7 @@ const AuthProvider: React.FC = ({ children }) => {
   );
 };
 
-function useAuth(): AuthContextData {
+function useAuth(): IAuthContextData {
   const context = useContext(AuthContext);
 
   if (!context) {

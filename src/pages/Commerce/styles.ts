@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { lighten, darken } from 'polished';
+import { lighten } from 'polished';
 
 import signInBackgroundImg from '../../assets/commerce.jpg';
 
