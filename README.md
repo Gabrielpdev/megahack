@@ -102,7 +102,6 @@ yarn start
 ## 📝 Licença
 
 Esse projeto está sob a licença GPL. Veja o arquivo [LICENSE](/LICENSE.gpl) para mais detalhes.
-Feito com ❤️ por Gabriel Pereira 👋🏽 [Entre em contato!](https://www.linkedin.com/in/gabriel-pereira-oliveira-78b1801ab/)
 
 [mock-api]: https://mockapi.io/projects
 [react-leaflet]: https://react-leaflet.js.org/
