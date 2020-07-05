@@ -282,7 +282,7 @@ const Commerce: React.FC = () => {
                   {cupomSelected !== undefined ? (
                     <> </>
                   ) : (
-                    <h2>Cupouns de hoje !</h2>
+                    <h2>Cupons de hoje !</h2>
                   )}
                   {cupomSelected === undefined ? (
                     commerce.cupom.map(item => (

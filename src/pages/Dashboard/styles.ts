@@ -32,6 +32,10 @@ export const Header = styled.div`
     display: flex;
     flex-direction: column;
     text-align: right;
+
+    h3 {
+      font-size: 14px;
+    }
   }
 
   h3 {
@@ -41,12 +45,16 @@ export const Header = styled.div`
       color: #ff9900;
     }
   }
+
+  > h1 {
+    font-size: 28px;
+  }
 `;
 
 export const Map = styled(Mapa)`
   margin: 40px auto;
   border-radius: 10px;
-  height: 500px;
+  height: 405px;
   width: 80%;
   border: 2px solid #312e38;
 

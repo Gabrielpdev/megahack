@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { FiArrowLeftCircle } from 'react-icons/fi';
 
@@ -13,9 +13,24 @@ import {
   Historico,
 } from './styles';
 
+interface IUser {
+  name: string;
+  email: string;
+}
+
 const Profile: React.FC = () => {
   const history = useHistory();
 
+  const [user] = useState(
+    (): IUser => {
+      const response = localStorage.getItem('@GoBarber:user');
+
+      if (response) {
+        return JSON.parse(response);
+      }
+      return {} as IUser;
+    },
+  );
   return (
     <Container>
       <Background />
@@ -23,7 +38,7 @@ const Profile: React.FC = () => {
         <FiArrowLeftCircle size={30} onClick={() => history.push('/')} />
         <AnimationContainer>
           <img src={avatar} alt="avatarimage" />
-          <h2>Usuario Teste</h2>
+          <h2>{user.name}</h2>
           <Historico>
             <div className="local">
               <h3>Ultima Compra:</h3>
