@@ -144,7 +144,7 @@ const Dashboard: React.FC = () => {
             position[1],
             commerce.latitude,
             commerce.longitude,
-          ) !== 10 ? (
+          ) < 10 ? (
             <Marker
               key={commerce.id}
               position={[Number(commerce.latitude), Number(commerce.longitude)]}
@@ -174,7 +174,7 @@ const Dashboard: React.FC = () => {
         <h1>Comércios mais próximos de você</h1>
         {distance.map(item => {
           const commerce = commerces.filter(
-            comercio => comercio.distance === item && comercio.distance > 10,
+            comercio => comercio.distance === item && comercio.distance < 10,
           );
 
           return commerce[0] === undefined ? (
