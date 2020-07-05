@@ -75,11 +75,11 @@ yarn start
 ## ⛏️ Tecnologias Utilizadas <a name = "built_using"></a>
 
 - 🛠 [MockAPi][mock-api]
-- 🗺️ [react-leaflet][react-leaflet]
 - 🔵 [TypeScript][typescript]
 - ⚛️ [React][reactjs]
-- 🔼 [Expo][expo]
-- 💅 [Styled-components]
+- ⚛️ [ContextApi][contextApi]
+- 💅 [Styled-components][styled-components]
+- 🗺️ [React-leaflet][react-leaflet]
 
 ## 👨‍💼 Metas de desenvolvimento <a name = "roadmap"></a>
 
@@ -111,5 +111,6 @@ Feito com ❤️ por Gabriel Pereira 👋🏽 [Entre em contato!](https://www.li
 [yarn]: https://yarnpkg.com/
 [vscode]: https://code.visualstudio.com/
 [license]: https://opensource.org/licenses/MIT
-[styled-components]:https://styled-components.com/
+[styled-components]: https://styled-components.com/
+[contextApi]: https://pt-br.reactjs.org/docs/context.html
 
