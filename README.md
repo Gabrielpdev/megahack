@@ -39,7 +39,7 @@
 
 <p align="center">
   <a href="" rel="noopener">
- <img width=650px src=".github\gif_video.gif" alt="Preview logo"></a>
+ <img width=650px src=".github\preview.gif" alt="Preview logo"></a>
 </p>
 
 
