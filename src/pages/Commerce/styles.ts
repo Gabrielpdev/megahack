@@ -1,7 +1,12 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
+import { FiStar } from 'react-icons/fi';
 import { lighten } from 'polished';
 
 import signInBackgroundImg from '../../assets/commerce.jpg';
+
+interface IFavorite {
+  Favorite: boolean;
+}
 
 export const Container = styled.div`
   height: 100vh;
@@ -18,18 +23,31 @@ export const Content = styled.div`
 
   width: 100%;
   max-width: 900px;
+`;
+
+export const Icons = styled.div`
+  width: 70%;
+  position: relative;
+  top: 30px;
+
+  display: flex;
+  justify-content: space-between;
 
   > svg {
-    position: relative;
-    right: 40%;
-    top: 20px;
-
     cursor: pointer;
 
     &:hover {
       color: #ff9900;
     }
   }
+`;
+
+export const Star = styled(FiStar)<IFavorite>`
+  ${props =>
+    props.Favorite &&
+    css`
+      color: #ff9900;
+    `}
 `;
 
 const appearFromLeft = keyframes`

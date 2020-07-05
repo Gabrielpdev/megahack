@@ -20,6 +20,8 @@ import {
   ProductList,
   AnimationContainer,
   Background,
+  Icons,
+  Star,
 } from './styles';
 
 const QRCode = require('qrcode.react');
@@ -68,6 +70,7 @@ const Commerce: React.FC = () => {
 
   const [commerce, setCommerce] = useState<ICommerce>({} as ICommerce);
   const [selected, setSelected] = useState<number>(1);
+  const [favorite, setFavorite] = useState<boolean>(false);
 
   const [tableSelected, setTableSelected] = useState<string>();
   const [tableHours, setTableHours] = useState<ITable>();
@@ -118,7 +121,18 @@ const Commerce: React.FC = () => {
     <Container>
       <Background />
       <Content>
-        <FiArrowLeftCircle size={30} onClick={() => history.push('/')} />
+        <Icons>
+          <FiArrowLeftCircle
+            className="back"
+            size={30}
+            onClick={() => history.push('/')}
+          />
+          <Star
+            size={25}
+            onClick={() => setFavorite(!favorite)}
+            Favorite={favorite}
+          />
+        </Icons>
         <AnimationContainer>
           <img src={commerce.image} alt="GoBarber" />
 

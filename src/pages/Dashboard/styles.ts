@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { lighten } from 'polished';
 import { Map as Mapa, Popup as texto } from 'react-leaflet';
 
 export const Container = styled.div`
@@ -46,8 +47,39 @@ export const Header = styled.div`
     }
   }
 
-  > h1 {
+  h1 {
     font-size: 28px;
+  }
+`;
+
+export const Busca = styled.div`
+  background: #232129;
+  display: flex;
+  justify-content: space-between;
+
+  margin: auto;
+
+  width: 80%;
+
+  border-radius: 10px;
+  padding: 16px;
+
+  border: 2px solid #232129;
+  color: #666360;
+
+  display: flex;
+  align-items: center;
+
+  svg {
+    margin-right: 5px;
+    cursor: pointer;
+  }
+
+  input {
+    background: none;
+    border: none;
+
+    color: #666360;
   }
 `;
 
@@ -97,5 +129,67 @@ export const Popup = styled(texto)`
     width: 50px;
     height: 50px;
     border-radius: 25px;
+  }
+`;
+
+export const Bars = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  h1 {
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+
+  button {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 3px 0;
+
+    border: 1px solid #312e38;
+
+    border-radius: 5px;
+
+    background: #f4ede8;
+    padding: 5px;
+
+    > img {
+      margin-left: 10px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+    span {
+      font-size: 14px;
+      margin: auto;
+    }
+
+    &:hover {
+      background: ${lighten(0.4, '#ff9900')};
+      border: 1px solid #ff9900;
+    }
+    div.esquerda {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-bottom: 3px;
+        span {
+          font-size: 14px;
+          margin: auto;
+          margin-right: 2px;
+        }
+      }
+    }
   }
 `;
