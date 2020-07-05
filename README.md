@@ -10,7 +10,6 @@
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
 [![GitHub Issues](https://img.shields.io/github/languages/count/Gabrielpdev/ConsumBeer)]()
 [![GitHub Pull Requests](https://img.shields.io/github/last-commit/Gabrielpdev/ConsumBeer)]()
-[![Made By](https://img.shields.io/badge/Made%20By-Krakatoa%20Team-brightgreen)]()
 [![License](https://img.shields.io/badge/license-GPL-blue)](/LICENSE.gpl)
 [![Site](https://img.shields.io/badge/Clique%20me-%20para%20visualizar%20a%20plataforma-brightgreen)](https://consumbeer.herokuapp.com/)
 
@@ -39,7 +38,7 @@
 
 <p align="center">
   <a href="" rel="noopener">
- <img width=650px src=".github\preview.gif" alt="Preview logo"></a>
+ <img width=350px src=".github\preview.gif" alt="Preview logo"></a>
 </p>
 
 
@@ -75,11 +74,11 @@ yarn start
 ## ⛏️ Tecnologias Utilizadas <a name = "built_using"></a>
 
 - 🛠 [MockAPi][mock-api]
-- 🗺️ [react-leaflet][react-leaflet]
 - 🔵 [TypeScript][typescript]
 - ⚛️ [React][reactjs]
-- 🔼 [Expo][expo]
-- 💅 [Styled-components]
+- ⚛️ [ContextApi][contextApi]
+- 💅 [Styled-components][styled-components]
+- 🗺️ [React-leaflet][react-leaflet]
 
 ## 👨‍💼 Metas de desenvolvimento <a name = "roadmap"></a>
 
@@ -102,7 +101,6 @@ yarn start
 ## 📝 Licença
 
 Esse projeto está sob a licença GPL. Veja o arquivo [LICENSE](/LICENSE.gpl) para mais detalhes.
-Feito com ❤️ por Gabriel Pereira 👋🏽 [Entre em contato!](https://www.linkedin.com/in/gabriel-pereira-oliveira-78b1801ab/)
 
 [mock-api]: https://mockapi.io/projects
 [react-leaflet]: https://react-leaflet.js.org/
@@ -111,5 +109,6 @@ Feito com ❤️ por Gabriel Pereira 👋🏽 [Entre em contato!](https://www.li
 [yarn]: https://yarnpkg.com/
 [vscode]: https://code.visualstudio.com/
 [license]: https://opensource.org/licenses/MIT
-[styled-components]:https://styled-components.com/
+[styled-components]: https://styled-components.com/
+[contextApi]: https://pt-br.reactjs.org/docs/context.html
 
