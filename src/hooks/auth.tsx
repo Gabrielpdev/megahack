@@ -28,12 +28,14 @@ const AuthProvider: React.FC = ({ children }) => {
     return {} as IAuthState;
   });
 
-  const signIn = useCallback(async () => {
+  const signIn = useCallback(async ({ email, password }) => {
+    if (email !== 'joaocarlos@teste.com' || password !== '123456') {
+      throw new Error();
+    }
+
     const response = await api.get('session/1');
 
     const user = response.data;
-
-    console.log(response.data);
 
     localStorage.setItem('@GoBarber:user', JSON.stringify(user));
 
