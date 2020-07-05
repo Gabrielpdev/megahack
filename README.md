@@ -10,7 +10,6 @@
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
 [![GitHub Issues](https://img.shields.io/github/languages/count/Gabrielpdev/ConsumBeer)]()
 [![GitHub Pull Requests](https://img.shields.io/github/last-commit/Gabrielpdev/ConsumBeer)]()
-[![Made By](https://img.shields.io/badge/Made%20By-Krakatoa%20Team-brightgreen)]()
 [![License](https://img.shields.io/badge/license-GPL-blue)](/LICENSE.gpl)
 [![Site](https://img.shields.io/badge/Clique%20me-%20para%20visualizar%20a%20plataforma-brightgreen)](https://consumbeer.herokuapp.com/)
 
