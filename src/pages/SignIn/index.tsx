@@ -9,6 +9,7 @@ import { useAuth } from '../../hooks/auth';
 import { useToast } from '../../hooks/toast';
 
 import getValidationErros from '../../utils/getValidationErros';
+import logo from '../../assets/logo.png';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
@@ -70,8 +71,7 @@ const SignIn: React.FC = () => {
     <Container>
       <Content>
         <AnimationContainer>
-          {/* <img src={logo} alt="GoBarber" /> */}
-          <h1>Sua Logo Aqui</h1>
+          <img src={logo} alt="GoBarber" />
           <Form onSubmit={hendleSubmit} ref={formRef}>
             <h1>Faça seu login</h1>
 
