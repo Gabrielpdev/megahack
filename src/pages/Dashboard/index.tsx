@@ -133,7 +133,7 @@ const Dashboard: React.FC = () => {
         <FiSearch onClick={() => setSearch(true)} />
       </Busca>
 
-      <Map center={position} zoom={7}>
+      <Map center={position} zoom={14.5}>
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.osm.org/{z}/{x}/{y}.png"
