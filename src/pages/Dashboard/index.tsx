@@ -9,6 +9,8 @@ import { useHistory } from 'react-router-dom';
 import api from '../../services/api';
 import { useAuth } from '../../hooks/auth';
 
+import logo2 from '../../assets/logo2.png';
+
 import getDistance from '../../utils/getDistance';
 
 import { Container, Header, Map, Popup, Busca, Bars } from './styles';
@@ -115,7 +117,7 @@ const Dashboard: React.FC = () => {
   return (
     <Container>
       <Header>
-        <h1>Consum Beer</h1>
+        <img src={logo2} alt="logo" />
         <div className="profile">
           <h3 onClick={handleNavigateToUser}>{user.name}</h3>
           <button type="button" onClick={() => signOut()}>
@@ -183,8 +185,7 @@ const Dashboard: React.FC = () => {
             <button
               type="button"
               onClick={() =>
-                history.push(`/commerce/${Number(commerce[0].id)}`)
-              }
+                history.push(`/commerce/${Number(commerce[0].id)}`)}
             >
               {' '}
               <img src={commerce[0].image} alt={commerce[0].name} />

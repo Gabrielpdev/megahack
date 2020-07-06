@@ -47,8 +47,8 @@ export const Header = styled.div`
     }
   }
 
-  h1 {
-    font-size: 28px;
+  img {
+    height: 120px;
   }
 `;
 

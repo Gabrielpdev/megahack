@@ -49,7 +49,7 @@ const History: React.FC = () => {
                 <td>
                   <div className="produto">
                     <img
-                      src="https://lh3.googleusercontent.com/proxy/ECZlu1Rg3vouw88BE_eILAdPaEiknNHm9UiS5U-GL-K8CjzLP1-Y86jIDKD4ZuPuXy24mkj8kn4n2RFCgFFqngrg7bnMmnbvBrwVy_jf-1ndBIn-aY8fuuq6mfgTOPxgIDdTHQ"
+                      src="https://media-cdn.tripadvisor.com/media/photo-s/10/97/1d/22/porcao-de-batata-frita.jpg"
                       alt="Porcao de batata"
                     />
                     <span>Porcao de batata</span>
